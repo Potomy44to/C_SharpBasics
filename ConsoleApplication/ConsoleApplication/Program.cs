@@ -1,9 +1,24 @@
-﻿string myName = "Sergey";
-byte myAge = 31;
-bool havePet = true;
-double myShoeSize = 44.5;
+﻿Console.WriteLine("What is your name? ");
+var name = Console.ReadLine();
 
-Console.WriteLine("My name is {0}", myName);
-Console.WriteLine("My age is {0}", myAge);
-Console.WriteLine("Do you have a pet? {0}", havePet);
-Console.WriteLine("My shoe size is {0}", myShoeSize);
+Console.WriteLine("What is your age? ");
+var age = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Your name is {0} and age is {1}", name, age);
+
+Console.WriteLine("What is your date of birth? ");
+var birthDate = Console.ReadLine();
+
+Console.WriteLine("Your birthdate is {0}", birthDate);
+
+enum daysOfWeek : byte
+{
+    Monday = 1,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday,
+    Sunday
+}
+
