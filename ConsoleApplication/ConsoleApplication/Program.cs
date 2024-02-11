@@ -1,24 +1,26 @@
-﻿Console.WriteLine("What is your name? ");
-var name = Console.ReadLine();
+﻿Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
 
-Console.WriteLine("What is your age? ");
-var age = Convert.ToInt32(Console.ReadLine());
+var color = Console.ReadLine();
 
-Console.WriteLine("Your name is {0} and age is {1}", name, age);
-
-Console.WriteLine("What is your date of birth? ");
-var birthDate = Console.ReadLine();
-
-Console.WriteLine("Your birthdate is {0}", birthDate);
-
-enum daysOfWeek : byte
+if (color == "red")
 {
-    Monday = 1,
-    Tuesday,
-    Wednesday,
-    Thursday,
-    Friday,
-    Saturday,
-    Sunday
+    Console.BackgroundColor = ConsoleColor.Red;
+    Console.ForegroundColor = ConsoleColor.Black;
+
+    Console.WriteLine("Your color is red!");
 }
 
+else if (color == "green")
+{
+    Console.BackgroundColor = ConsoleColor.Green;
+    Console.ForegroundColor = ConsoleColor.Black;
+
+    Console.WriteLine("Your color is green!");
+}
+else
+{
+    Console.BackgroundColor = ConsoleColor.Cyan;
+    Console.ForegroundColor = ConsoleColor.Black;
+
+    Console.WriteLine("Your color is cyan!");
+}
