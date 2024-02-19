@@ -7,7 +7,7 @@ for (int i = 0; i < arr.GetUpperBound(0) + 1; i++)
 
     for (int j = 0; j < arr.GetUpperBound(1) + 1; j++)
     {
-        for (int k = 1; )
+        for (int k = 1; k < arr.GetUpperBound(1) + 1; k++)
 
             if (arr[i,k] < arr[i+1,k])
         {
