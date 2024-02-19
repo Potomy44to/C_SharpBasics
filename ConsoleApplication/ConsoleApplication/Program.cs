@@ -1,26 +1,24 @@
-﻿Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
+﻿
+var arr = new int[] { 5, 6, 9, 1, 2, 3, 4 };
 
-var color = Console.ReadLine();
-
-if (color == "red")
+for (int i = 0; i < arr.Length; i++)
 {
-    Console.BackgroundColor = ConsoleColor.Red;
-    Console.ForegroundColor = ConsoleColor.Black;
+    int swapVariable;
 
-    Console.WriteLine("Your color is red!");
+    for (int k = 0; k < arr.Length; k++)
+    {
+        if (arr[i] < arr[k])
+        {
+            swapVariable = arr[k];
+            arr[k] = arr[i];
+            arr[i] = swapVariable;
+        }
+
+    }
 }
 
-else if (color == "green")
+foreach (var number in arr)
 {
-    Console.BackgroundColor = ConsoleColor.Green;
-    Console.ForegroundColor = ConsoleColor.Black;
-
-    Console.WriteLine("Your color is green!");
+    Console.Write(number);
 }
-else
-{
-    Console.BackgroundColor = ConsoleColor.Cyan;
-    Console.ForegroundColor = ConsoleColor.Black;
 
-    Console.WriteLine("Your color is cyan!");
-}
