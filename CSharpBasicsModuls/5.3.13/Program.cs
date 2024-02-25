@@ -2,7 +2,7 @@
 int[] array, sortedDesc, sortedAsc;
 
 array = GetArrayFromConsole();
-sortedDesc = sortedAsc = array;
+SortArray(in array, out sortedDesc, out sortedAsc);
 
 ShowArray(array, sortedDesc, sortedAsc);
 
@@ -22,12 +22,18 @@ static int[] GetArrayFromConsole(int num = 5)
 
 static void SortArray(in int[] array, out int[] sortedDesc, out int[] sortedAsc)
 {
-    sortedDesc = SortArrayDesc(array);
-    sortedAsc = SortArrayAsc(array);
+    int[] copyArray = new int[array.Length];
+    Array.Copy(array, copyArray, array.Length);
+
+    sortedAsc = SortArrayAsc(copyArray);
+    sortedDesc = SortArrayDesc(copyArray);
 }
 
 static int[] SortArrayDesc(int[] descArray)
 {
+    int[] copyDescArray = new int[descArray.Length];
+    Array.Copy(descArray, copyDescArray, descArray.Length);
+
     int moveVariable;
 
     for (int j = 0; j < descArray.Length; j++)
@@ -43,11 +49,14 @@ static int[] SortArrayDesc(int[] descArray)
         }
     }
 
-    return descArray;
+    return copyDescArray;
 }
 
 static int[] SortArrayAsc(int[] ascArray)
 {
+    int[] copyAscArray = new int[ascArray.Length];
+    Array.Copy(ascArray, copyAscArray, ascArray.Length);
+
     int moveVariable;
 
     for (int j = 0; j < ascArray.Length; j++)
@@ -63,13 +72,11 @@ static int[] SortArrayAsc(int[] ascArray)
         }
     }
 
-    return ascArray;
+    return copyAscArray;
 }
 
 static void ShowArray(int[] array, int[] sortedDesc, int[] sortedAsc)
 {
-    SortArray(array, out sortedDesc, out sortedAsc);
-
     Console.WriteLine("Первичный массив:");
     foreach (int number in array)
         Console.Write(number + " ");
